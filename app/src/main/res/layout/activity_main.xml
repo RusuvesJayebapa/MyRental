@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#C3C3C3"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="1000px"
+        android:layout_height="650px"
+        android:background="@drawable/linearlayoutbox"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical" >
+
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25px"
+            android:padding="10px"
+            android:hint="Enter Your Email"
+            android:inputType="textPersonName"
+            android:background="@drawable/editbox" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25px"
+            android:padding="10px"
+            android:hint="Enter Your Password"
+            android:inputType="textPassword"
+            android:background="@drawable/editbox" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25px"
+            android:text="Login"
+            android:textColor="#ffffff"
+            android:background="@drawable/button" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25px"
+            android:text="Forgot Password?"
+            android:textColor="@android:color/holo_red_light" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25px"
+            android:layout_marginRight="25px"
+            android:layout_marginBottom="25px"
+            android:autoLink="none"
+            android:linksClickable="true"
+            android:text="Create New Account"
+            android:textColor="@android:color/holo_red_light"
+            android:textColorLink="#F44336" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#000">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10px"
+        app:cardCornerRadius = "10px"
+        android:layout_margin="10px" >
+
+       <!-- <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20px" >
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="280px"
+                android:layout_margin="5px"
+                android:padding="10px" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Landlord : " />
+
+                    <EditText
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/Address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Location : " />
+
+                    <EditText
+                        android:id="@+id/address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/Phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mobile : " />
+
+                    <EditText
+                        android:id="@+id/phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/Type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Type : " />
+
+                    <EditText
+                        android:id="@+id/type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/Rent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rent : ₹ " />
+
+                    <EditText
+                        android:id="@+id/rent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15px"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/request"
+                        android:layout_width="180px"
+                        android:layout_height="60px"
+                        android:background="#f05e23"
+                        android:text="Request"
+                        android:textAllCaps="false"
+                        android:textSize="14sp" />
+
+                    <Button
+                        android:id="@+id/call"
+                        android:layout_width="180px"
+                        android:layout_height="60px"
+                        android:layout_marginLeft="50px"
+                        android:background="#f05e23"
+                        android:text="Call"
+                        android:textAllCaps="false"
+                        android:textSize="14sp" />
+
+                    <Button
+                        android:id="@+id/form"
+                        android:layout_width="180px"
+                        android:layout_height="60px"
+                        android:layout_marginLeft="50px"
+                        android:background="#f05e23"
+                        android:visibility="gone"
+                        android:text="Fill Form"
+                        android:textAllCaps="false"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+        </LinearLayout> -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5px"
+            android:orientation="vertical">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="500px"
+                android:layout_margin="10px" >
+
+            </androidx.viewpager.widget.ViewPager>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15px"
+                android:layout_marginRight="15px"
+                android:layout_marginTop="15px"
+                android:text="Landlord Details"
+                android:textSize="12sp"
+                android:textStyle="bold|italic" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3px"
+                android:background="#FF03A9F4"
+                android:layout_marginLeft="15px"
+                android:layout_marginRight="15px" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="10px" >
+
+                <TextView
+                    android:id="@+id/Landlord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Landlord :  " />
+
+                <EditText
+                    android:id="@+id/landlord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="10px" >
+
+                <TextView
+                    android:id="@+id/Landlord_Address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Address :  " />
+
+                <EditText
+                    android:id="@+id/landlord_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="650px"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="10px" >
+
+                <TextView
+                    android:id="@+id/Phone"
+                    android:layout_width="100px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Phone :  " />
+
+                <EditText
+                    android:id="@+id/phone"
+                    android:layout_width="100px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:background="@null" />
+
+                <TextView
+                    android:id="@+id/Age"
+                    android:layout_width="96px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:text="Age :  " />
+
+                <EditText
+                    android:id="@+id/age"
+                    android:layout_width="100px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@null" />
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="10px" >
+
+                <TextView
+                    android:id="@+id/Occupation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Occupation :  " />
+
+                <EditText
+                    android:id="@+id/occupation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15px"
+                android:layout_marginRight="15px"
+                android:layout_marginTop="15px"
+                android:text="Property Details"
+                android:textSize="12sp"
+                android:textStyle="bold|italic" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3px"
+                android:background="#FF03A9F4"
+                android:layout_marginLeft="15px"
+                android:layout_marginRight="15px" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="10px" >
+
+                <TextView
+                    android:id="@+id/Property_Address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Address :  " />
+
+                <EditText
+                    android:id="@+id/property_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="10px" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Property :  " />
+
+                    <EditText
+                        android:id="@+id/type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Area"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Area(Sq.ft) :  " />
+
+                    <EditText
+                        android:id="@+id/area"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10px" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Applicance/Furniture :  "
+                    android:background="@null" />
+
+                <LinearLayout
+                    android:id="@+id/Applicance_Furniture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="10px" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Duration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Duration :  "
+                        android:background="@null" />
+
+                    <EditText
+                        android:id="@+id/duration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15px"
+                        android:background="@null" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Deposit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Deposit :  ₹ "
+                        android:background="@null" />
+
+                    <EditText
+                        android:id="@+id/deposit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10px" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Clauses :  "
+                    android:background="@null" />
+
+                <LinearLayout
+                    android:id="@+id/Clauses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="10px" >
+
+                <TextView
+                    android:id="@+id/Rent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rent :  ₹ " />
+
+                <EditText
+                    android:id="@+id/rent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/request"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60px"
+                    android:background="#f05e23"
+                    android:text="Request"
+                    android:textAllCaps="false"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/call"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60px"
+                    android:layout_marginLeft="50px"
+                    android:background="#f05e23"
+                    android:text="Call"
+                    android:textAllCaps="false"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/form"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60px"
+                    android:layout_marginLeft="50px"
+                    android:background="#f05e23"
+                    android:visibility="gone"
+                    android:text="Fill Form"
+                    android:textAllCaps="false"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

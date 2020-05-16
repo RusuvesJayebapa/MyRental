@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:orientation="vertical"
+    tools:context=".AgreementDetails">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="20px"
+            android:layout_marginRight="20px"
+            android:layout_marginBottom="5px"
+            android:background="@drawable/linearlayoutbox"
+            android:orientation="vertical"
+            android:padding="15px">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Agreement Details"
+                android:textColor="#FF03A9F4"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="5px"
+            android:layout_marginRight="20px"
+            android:layout_marginBottom="5px"
+            android:background="@drawable/linearlayoutbox"
+            android:orientation="vertical"
+            android:padding="15px">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Duration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15px"
+                    android:layout_marginTop="15px"
+                    android:layout_weight="1"
+                    android:text="Total Duration"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/duration"
+                        android:layout_width="490px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="15px"
+                        android:background="@drawable/editbox"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:maxLength="2"
+                        android:padding="10px"
+                        android:textSize="16sp" />
+
+                    <Spinner
+                        android:layout_width="490px"
+                        android:layout_height="76px"
+                        android:layout_weight="1"
+                        android:layout_margin="15px"
+                        android:background="@drawable/editbox"
+                        android:entries="@array/time_period" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="5px"
+            android:layout_marginRight="20px"
+            android:layout_marginBottom="5px"
+            android:background="@drawable/linearlayoutbox"
+            android:orientation="vertical"
+            android:padding="15px">
+
+            <TextView
+                android:id="@+id/DespositAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15px"
+                android:layout_marginTop="15px"
+                android:layout_marginRight="15px"
+                android:layout_weight="1"
+                android:background="@drawable/textbox"
+                android:text="Deposit Amount"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/despositAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15px"
+                    android:layout_weight="1"
+                    android:background="@drawable/editbox"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:padding="10px"
+                    android:textSize="16sp" />
+
+                <CheckBox
+                    android:id="@+id/RefundableDeposit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15px"
+                    android:layout_weight="1"
+                    android:text="Refundable Deposit" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/Mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15px"
+                android:layout_marginTop="15px"
+                android:layout_marginRight="15px"
+                android:layout_weight="1"
+                android:background="@drawable/textbox"
+                android:text="Mode Of Deposit"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/mode"
+                android:layout_width="520px"
+                android:layout_height="76px"
+                android:layout_margin="15px"
+                android:layout_weight="1"
+                android:background="@drawable/editbox" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="5px"
+            android:layout_marginRight="20px"
+            android:layout_marginBottom="5px"
+            android:background="@drawable/linearlayoutbox"
+            android:orientation="vertical"
+            android:padding="15px">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/StartDate"
+                    android:layout_width="100px"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15px"
+                    android:layout_marginTop="15px"
+                    android:layout_marginRight="15px"
+                    android:layout_weight="1"
+                    android:background="@drawable/textbox"
+                    android:text="Start Date"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/Period"
+                    android:layout_width="100px"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15px"
+                    android:layout_marginTop="15px"
+                    android:layout_marginRight="15px"
+                    android:layout_weight="1"
+                    android:background="@drawable/textbox"
+                    android:text="Lock-in Period(months)"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/startDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15px"
+                    android:layout_weight="1"
+                    android:background="@drawable/editbox"
+                    android:ems="10"
+                    android:inputType="date|textPersonName"
+                    android:padding="10px"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/period"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15px"
+                    android:layout_weight="1"
+                    android:background="@drawable/editbox"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:maxLength="2"
+                    android:padding="10px"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="5px"
+            android:layout_marginRight="20px"
+            android:layout_marginBottom="5px"
+            android:background="@drawable/linearlayoutbox"
+            android:orientation="vertical"
+            android:padding="15px">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15px"
+                android:text="Advanced Clauses"
+                android:textColor="#FF03A9F4"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3px"
+                android:layout_marginLeft="15px"
+                android:layout_marginRight="15px"
+                android:background="#FF03A9F4" />
+
+            <LinearLayout
+                android:id="@+id/Clause"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="900px"
+                android:layout_marginTop="15px"
+                android:layout_marginRight="15px"
+                android:layout_marginBottom="15px"
+                android:src="@drawable/add" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="5px"
+            android:layout_marginRight="20px"
+            android:layout_marginBottom="5px"
+            android:background="@drawable/linearlayoutbox"
+            android:orientation="vertical"
+            android:padding="15px">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15px"
+                android:text="Residence Photos"
+                android:textColor="#FF03A9F4"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3px"
+                android:layout_marginLeft="15px"
+                android:layout_marginRight="15px"
+                android:background="#FF03A9F4" />
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:id="@+id/Photos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <ImageView
+                android:id="@+id/add_photos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="900px"
+                android:layout_marginTop="15px"
+                android:layout_marginRight="15px"
+                android:layout_marginBottom="15px"
+                android:src="@drawable/add" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/previous"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20px"
+                android:layout_marginTop="5px"
+                android:layout_marginRight="20px"
+                android:layout_marginBottom="25px"
+                android:layout_weight="1"
+                android:background="@drawable/button"
+                android:text="Previous"
+                android:textColor="#ffffff" />
+
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20px"
+                android:layout_marginTop="5px"
+                android:layout_marginRight="20px"
+                android:layout_marginBottom="25px"
+                android:layout_weight="1"
+                android:background="@drawable/button"
+                android:text="submit"
+                android:textColor="#ffffff" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

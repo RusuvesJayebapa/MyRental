@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<group android:checkableBehavior="single"
+    android:id="@+id/main">
+    <item android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_person"
+        android:title="Profile" />
+
+    <item android:id="@+id/nav_sites"
+        android:icon="@drawable/site"
+        android:visible="true"
+        android:title="Sites">
+        <!--<menu>
+            <group
+                android:checkableBehavior="single"
+                android:id="@+id/group"
+                android:visible="false">
+                <item android:id="@+id/nav_rented"
+                    android:title="Rented" />
+
+                <item android:id="@+id/nav_notrented"
+                    android:title="Not Rented" />
+            </group>
+        </menu>-->
+    </item>
+
+    <item android:id="@+id/nav_chats"
+        android:icon="@drawable/chat"
+        android:title="Chats" />
+
+    <item android:id="@+id/nav_logout"
+        android:icon="@drawable/ic_cancel"
+        android:title="Log Out" />
+</group>
+</menu>

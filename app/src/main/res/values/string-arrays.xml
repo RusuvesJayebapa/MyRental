@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="owner">Owner</string>
+
+    <string-array name="category">
+        <item>House</item>
+        <item>Office Building</item>
+    </string-array>
+
+    <string-array name="property_type">
+        <item>Room</item>
+        <item>BHK</item>
+        <item>BK</item>
+    </string-array>
+
+    <string-array name="vehicle_type">
+        <item>Two-Wheelers</item>
+        <item>Four-Wheelers</item>
+    </string-array>
+
+    <string-array name="time_period">
+        <item>per day</item>
+        <item>per month</item>
+        <item>per year</item>
+    </string-array>
+
+    <string-array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="survey">
+        <item>Survey No.</item>
+        <item>Plot No.</item>
+    </string-array>
+
+    <string-array name="usage">
+        <item>Commercial</item>
+        <item>Personal</item>
+    </string-array>
+
+    <string-array name="mop">
+        <item>Cash</item>
+        <item>Online</item>
+    </string-array>
+
+</resources>
