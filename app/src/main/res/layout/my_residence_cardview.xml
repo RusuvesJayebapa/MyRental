@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#000"
+    android:background="#fff"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -9,24 +9,48 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="10px"
-        android:background="#bcbabc"
-        app:cardCornerRadius = "10px"
-        android:layout_margin="10px" >
+        app:cardElevation="10dp"
+        app:cardUseCompatPadding="true"
+        android:background="@drawable/linearlayoutbox">
 
         <LinearLayout
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5px"
-            android:orientation="vertical">
+            android:layout_margin="10dp"
+            android:padding="10px"
+            android:orientation="vertical"
+            android:background="@drawable/linearlayoutbox" >
 
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/viewpager"
-                android:layout_width="1030px"
-                android:layout_height="1030px"
-                android:layout_margin="10px" >
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_sub_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
 
-            </androidx.viewpager.widget.ViewPager>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -"
+                android:textColor="#000" />
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10px">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Landlord Details :"
+                    android:textStyle="italic"
+                    android:textColor="#000" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+            </LinearLayout>-->
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -35,25 +59,18 @@
                 android:layout_margin="10px" >
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Landlord Details" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <TextView
                     android:id="@+id/Landlord"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Landlord :  " />
+                    android:text="Landlord :  "
+                    android:textColor="#000" />
 
-                <EditText
+                <TextView
                     android:id="@+id/landlord"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@null" />
+                    android:text="Jethalal Champaklal Gada"
+                    android:textColor="#000" />
 
             </LinearLayout>
 
@@ -67,13 +84,15 @@
                     android:id="@+id/Landlord_Address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Location :  " />
+                    android:text="Location :  "
+                    android:textColor="#000" />
 
-                <EditText
+                <TextView
                     android:id="@+id/landlord_address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@null" />
+                    android:text="#101 1st floor, Gada Nivas, Powder Galli, Goregoan East, Mumbai-400004, Maharashtra"
+                    android:textColor="#000" />
 
             </LinearLayout>
 
@@ -87,13 +106,104 @@
                     android:id="@+id/Phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Mobile :  " />
+                    android:text="Mobile :  "
+                    android:textColor="#000" />
 
-                <EditText
+                <TextView
                     android:id="@+id/phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@null" />
+                    android:text="8765413202 "
+                    android:textColor="#000" />
+
+                <ImageView
+                    android:id="@+id/call"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60px"
+                    android:layout_weight="1"
+                    android:src="@drawable/call" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -"
+                android:textColor="#000" />
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="10px"
+                android:layout_marginRight="10px"
+                android:layout_marginBottom="10px"
+                android:layout_marginTop="20px">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Property Details :"
+                    android:textStyle="italic"
+                    android:textColor="#000" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+            </LinearLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="10px" >
+
+
+                <LinearLayout
+                    android:layout_width="100px"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10px"
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Property :  "
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Apartment, 2 BHK"
+                        android:textColor="#000" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="100px"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10px"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Area"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Area(Sq.ft) :  "
+                        android:textColor="#000"/>
+
+                    <TextView
+                        android:id="@+id/area"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10000"
+                        android:textColor="#000" />
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -104,75 +214,7 @@
                 android:layout_margin="10px" >
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/Type"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Property :  " />
-
-                    <EditText
-                        android:id="@+id/type"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@null" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:id="@+id/Area"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Area(Sq.ft) :  " />
-
-                    <EditText
-                        android:id="@+id/area"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@null" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="10px" >
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/Duration"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Duration :  "
-                        android:background="@null" />
-
-                    <EditText
-                        android:id="@+id/duration"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="15px"
-                        android:background="@null" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="100px"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="horizontal">
@@ -182,42 +224,99 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Deposit :  ₹ "
-                        android:background="@null" />
+                        android:textColor="#000" />
 
-                    <EditText
+                    <TextView
                         android:id="@+id/deposit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@null" />
+                        android:text="3000"
+                        android:textColor="#000" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="100px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="262px"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Rent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rent :  ₹ "
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/rent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10000"
+                        android:textColor="#000" />
 
                 </LinearLayout>
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="10px" >
+                android:text=" -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -"
+                android:textColor="#000" />
+
+            <LinearLayout
+                android:id="@+id/Applicance_Furniture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10px">
 
                 <TextView
-                    android:id="@+id/Rent"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/applicance_furniture"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Rent :  ₹ " />
-
-                <EditText
-                    android:id="@+id/rent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@null" />
+                    android:text="Applicances :"
+                    android:textColor="#000" />
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -"
+                android:textColor="#000" />
+
+            <LinearLayout
+                android:id="@+id/Clause"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10px">
+
+                <TextView
+                    android:id="@+id/clause"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Clauses :"
+                    android:textColor="#000" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -"
+                android:textColor="#000" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_gravity="center">
 
                 <Button
                     android:id="@+id/requests"
@@ -225,9 +324,10 @@
                     android:layout_height="60px"
                     android:layout_weight="1"
                     android:layout_margin="10px"
-                    android:background="#f05e23"
+                    android:background="@drawable/button"
                     android:text="Requests"
                     android:textAllCaps="false"
+                    android:textColor="#fff"
                     android:textSize="14sp" />
 
                 <Button
@@ -236,25 +336,38 @@
                     android:layout_height="60px"
                     android:layout_weight="1"
                     android:layout_margin="10px"
-                    android:background="#f05e23"
+                    android:background="@drawable/button"
                     android:text="Edit"
                     android:textAllCaps="false"
+                    android:textColor="#fff"
                     android:textSize="14sp" />
 
-                <Button
-                    android:id="@+id/rented"
-                    android:layout_width="100px"
+                <TextView
+                    android:id="@+id/r"
+                    android:layout_width="5px"
                     android:layout_height="60px"
-                    android:layout_weight="1"
-                    android:layout_margin="10px"
-                    android:background="#f05e23"
-                    android:text="Rented"
-                    android:textAllCaps="false"
+                    android:layout_weight="0.5"
+                    android:layout_marginLeft="10px"
+                    android:layout_marginTop="10px"
+                    android:layout_marginBottom="10px"
+                    android:text="Rented : "
+                    android:textColor="#000"
                     android:textSize="14sp" />
+
+                <Switch
+                    android:id="@+id/rented"
+                    android:layout_width="0px"
+                    android:layout_height="60px"
+                    android:layout_weight="0.5"
+                    android:layout_marginRight="10px"
+                    android:layout_marginTop="10px"
+                    android:layout_marginBottom="10px" />
+
 
             </LinearLayout>
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
 </LinearLayout>

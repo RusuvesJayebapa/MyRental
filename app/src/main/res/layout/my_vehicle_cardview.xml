@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#fff"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#fff"
+        app:cardElevation="10dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10px"
+            android:orientation="vertical"
+            android:background="@drawable/linearlayoutbox">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_sub_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="10px" >
+
+                <LinearLayout
+                    android:layout_width="100px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Vehicle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vehicle :  "
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/vehicle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Maruti Suzuki Ciaz"
+                        android:textColor="#000" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="100px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="100px"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/VehicleClass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Class :  "
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/vehicleclass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="10px" >
+
+                <LinearLayout
+                    android:layout_width="100px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Mileage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mileage : "
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/mileage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="7"
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/mileageId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  kmpl"
+                        android:textColor="#000" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="100px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="100px"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Power"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Power : "
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/power"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="hkhkh5k5h"
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/powerId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  cc"
+                        android:textColor="#000" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="10px" >
+
+                <LinearLayout
+                    android:layout_width="100px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Deposit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Deposit :  ₹ "
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/deposit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="100px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="100px"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Rent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rent :  ₹ "
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/rent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -" />
+
+            <LinearLayout
+                android:id="@+id/OnlyCar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="100px"
+                        android:layout_height="100px"
+                        android:layout_weight="1"
+                        android:src="@drawable/seats" />
+
+                    <ImageView
+                        android:layout_width="100px"
+                        android:layout_height="100px"
+                        android:layout_weight="1"
+                        android:src="@drawable/fuel" />
+
+                    <ImageView
+                        android:layout_width="100px"
+                        android:layout_height="100px"
+                        android:layout_weight="1"
+                        android:src="@drawable/ac" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/seats"
+                        android:layout_width="250px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="7 seats"
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/fuel"
+                        android:layout_width="250px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Petrol"
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/ac"
+                        android:layout_width="250px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Available"
+                        android:textColor="#000" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <Button
+                    android:id="@+id/requests"
+                    android:layout_width="100px"
+                    android:layout_height="60px"
+                    android:layout_weight="1"
+                    android:layout_margin="10px"
+                    android:background="#03A9F4"
+                    android:text="Requests"
+                    android:textAllCaps="false"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/edit"
+                    android:layout_width="100px"
+                    android:layout_height="60px"
+                    android:layout_weight="1"
+                    android:layout_margin="10px"
+                    android:background="#03A9F4"
+                    android:text="Edit"
+                    android:textAllCaps="false"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/r"
+                    android:layout_width="5px"
+                    android:layout_height="60px"
+                    android:layout_marginLeft="10px"
+                    android:layout_marginTop="10px"
+                    android:layout_marginBottom="10px"
+                    android:layout_weight="0.5"
+                    android:text="Rented : "
+                    android:textColor="#000"
+                    android:textSize="14sp" />
+
+                <Switch
+                    android:id="@+id/rented"
+                    android:layout_width="0px"
+                    android:layout_height="60px"
+                    android:layout_weight="0.5"
+                    android:layout_marginRight="10px"
+                    android:layout_marginTop="10px"
+                    android:layout_marginBottom="10px" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

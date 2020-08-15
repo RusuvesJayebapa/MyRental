@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Requests">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/Recycler">
-    </androidx.recyclerview.widget.RecyclerView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,4 +20,31 @@
             android:background="@null" />
     </LinearLayout>
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20px"
+        android:layout_marginRight="20px"
+        android:layout_marginBottom="5px"
+        android:background="@drawable/linearlayoutbox"
+        android:orientation="vertical"
+        android:padding="15px">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Requests"
+            android:textColor="#FF03A9F4"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20px"
+        android:layout_marginRight="20px"
+        android:id="@+id/Recycler" />
+
+</LinearLayout>

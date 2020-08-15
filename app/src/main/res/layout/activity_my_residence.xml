@@ -6,22 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".MyResidence">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/Recycler">
-    </androidx.recyclerview.widget.RecyclerView>
-
-    <LinearLayout
+   <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/ed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:text="You Don't Have Any Data..."
             android:background="@null" />
+
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_menu">
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryDark"
+        app:menu="@menu/bottom_menu"/>
 
 </RelativeLayout>

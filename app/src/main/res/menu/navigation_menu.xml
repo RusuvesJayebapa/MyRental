@@ -9,7 +9,7 @@
     <item android:id="@+id/nav_sites"
         android:icon="@drawable/site"
         android:visible="true"
-        android:title="Sites">
+        android:title="MyResidence">
         <!--<menu>
             <group
                 android:checkableBehavior="single"
@@ -25,8 +25,8 @@
     </item>
 
     <item android:id="@+id/nav_chats"
-        android:icon="@drawable/chat"
-        android:title="Chats" />
+        android:icon="@drawable/car"
+        android:title="MyVehicle" />
 
     <item android:id="@+id/nav_logout"
         android:icon="@drawable/ic_cancel"

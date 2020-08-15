@@ -3,6 +3,7 @@
     package="com.example.myrental">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
@@ -15,8 +16,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CreateAgreement"></activity>
-        <activity android:name=".Main2Activity" />
+        <activity android:name=".VehicleRequests"></activity>
+        <activity android:name=".VehicleRequested" />
+        <activity android:name=".VehicleTenant" />
+        <activity android:name=".MyVehicle" />
+        <activity android:name=".ProfileUpdate" />
+        <activity android:name=".TenantRequests" />
+        <activity android:name=".TenantAgreementPage" />
+        <activity android:name=".InProgressAgreement" />
+        <activity android:name=".VehicleDetails" />
         <activity android:name=".AgreementDetails" />
         <activity android:name=".PropertyDetails" />
         <activity android:name=".Requests" />

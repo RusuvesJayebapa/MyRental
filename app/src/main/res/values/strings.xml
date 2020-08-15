@@ -20,31 +20,28 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
 
-    <string name="group1">Group1</string>
-    <string name="group2">Group2</string>
-    <string name="group3">Group3</string>
-    <string name="group4">Group4</string>
+    <string name="Profile">Profile</string>
+    <string name="MyResidence">My Residence</string>
+    <string name="ResidenceAgreement">Residence Agreement</string>
+    <string name="MyVehicle">My Vehicle</string>
+    <string name="VehicleAgreement">Vehicle Agreement</string>
+    <string name="LogOut">Log Out</string>
 
-    <string-array name="group1">
-        <item>item1</item>
+    <string name="Login"><u>LOGIN</u></string>
+    
+    <string-array name="MyResidence">
+        <item>Rented Residence</item>
+        <item>Not Rented Residence</item>
     </string-array>
 
-    <string-array name="group2">
-        <item>item1</item>
-        <item>item2</item>
+    <string-array name="ResidenceAgreement">
+        <item>Requested</item>
+        <item>InAgreement</item>
     </string-array>
 
-    <string-array name="group3">
-        <item>item1</item>
-        <item>item2</item>
-        <item>item3</item>
-    </string-array>
-
-    <string-array name="group4">
-        <item>item1</item>
-        <item>item2</item>
-        <item>item3</item>
-        <item>item4</item>
+    <string-array name="MyVehicle">
+        <item>Rented Vehicle</item>
+        <item>Not Rented Vehicle</item>
     </string-array>
 
 </resources>

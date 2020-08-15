@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000"
+    android:background="#fff"
     android:orientation="vertical"
     tools:context=".CreateAccount">
 
@@ -20,7 +20,7 @@
             android:layout_marginTop="20px"
             android:layout_marginRight="20px"
             android:layout_marginBottom="5px"
-            android:background="@drawable/linearlayoutbox"
+            android:background="@drawable/button"
             android:orientation="vertical"
             android:padding="15px">
 
@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Create Account"
-                android:textColor="#FF03A9F4"
+                android:textColor="#FFF"
                 android:textSize="20sp" />
 
         </LinearLayout>
@@ -53,14 +53,14 @@
                 android:layout_marginLeft="15px"
                 android:text="Basic Details"
                 android:textColor="#FF03A9F4"
-                android:textSize="20sp" />
+                android:textSize="14sp" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="3px"
-                android:layout_marginLeft="15px"
-                android:layout_marginRight="15px"
-                android:background="#FF03A9F4" />
+<!--            <View-->
+<!--                android:layout_width="215px"-->
+<!--                android:layout_height="3px"-->
+<!--                android:layout_marginLeft="15px"-->
+<!--                android:layout_marginRight="15px"-->
+<!--                android:background="#FF03A9F4" />-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -69,18 +69,19 @@
 
                 <TextView
                     android:id="@+id/Firstname"
-                    android:layout_width="wrap_content"
+                    android:layout_width="100px"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15px"
+                    android:layout_marginRight="15px"
                     android:layout_marginTop="15px"
                     android:layout_weight="1"
-                    android:text="First Name"
+                    android:text="Firstname"
                     android:textColor="#000000"
                     android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/Lastname"
-                    android:layout_width="wrap_content"
+                    android:layout_width="100px"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15px"
                     android:layout_marginTop="15px"
@@ -98,27 +99,26 @@
 
                 <EditText
                     android:id="@+id/firstname"
-                    android:layout_width="475px"
+                    android:layout_width="100px"
                     android:layout_height="wrap_content"
                     android:layout_margin="15px"
                     android:layout_weight="1"
-                    android:background="@drawable/editbox"
-                    android:ems="1000"
+                    android:backgroundTint="#03A9F4"
                     android:inputType="textPersonName"
-                    android:padding="10px"
+                    android:paddingBottom="20px"
                     android:textSize="16sp" />
 
 
                 <EditText
                     android:id="@+id/lastname"
-                    android:layout_width="475px"
+                    android:layout_width="100px"
                     android:layout_height="wrap_content"
                     android:layout_margin="15px"
                     android:layout_weight="1"
-                    android:background="@drawable/editbox"
+                    android:backgroundTint="#03A9F4"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:padding="10px"
+                    android:paddingBottom="20px"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -130,7 +130,7 @@
 
                 <TextView
                     android:id="@+id/Middlename"
-                    android:layout_width="460px"
+                    android:layout_width="475px"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15px"
                     android:layout_marginTop="15px"
@@ -170,25 +170,29 @@
                     android:id="@+id/middlename"
                     android:layout_width="475px"
                     android:layout_height="wrap_content"
-                    android:layout_margin="15px"
+                    android:layout_marginLeft="15px"
+                    android:layout_marginRight="15px"
+                    android:layout_marginBottom="15px"
                     android:layout_weight="2"
-                    android:background="@drawable/editbox"
+                    android:backgroundTint="#03A9F4"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:padding="10px"
+                    android:paddingBottom="20px"
                     android:textSize="16sp" />
 
-                <TextView
+                <EditText
                     android:id="@+id/dob"
                     android:layout_width="310px"
                     android:layout_height="wrap_content"
-                    android:layout_margin="15px"
+                    android:layout_marginLeft="15px"
+                    android:layout_marginRight="15px"
+                    android:layout_marginBottom="15px"
                     android:layout_weight="1"
-                    android:background="@drawable/editbox"
+                    android:backgroundTint="#03A9F4"
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:maxLength="10"
-                    android:padding="10px"
+                    android:paddingBottom="20px"
                     android:textSize="16sp"
                     android:textColor="#000" />
 
@@ -219,17 +223,6 @@
                     android:textSize="16sp"
                     android:textColor="#000000" />
 
-                <!--<TextView
-                    android:id="@+id/Lastname"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="15px"
-                    android:layout_marginTop="15px"
-                    android:text="Last Name"
-                    android:textSize="16sp"
-                    android:textColor="#000000" /> -->
-
             </LinearLayout>
 
             <LinearLayout
@@ -244,22 +237,10 @@
                     android:layout_weight="1"
                     android:layout_margin="15px"
                     android:textSize="16sp"
-                    android:padding="10px"
+                    android:paddingBottom="20px"
                     android:ems="1000"
-                    android:background="@drawable/editbox"
+                    android:backgroundTint="#03A9F4"
                     android:inputType="textPersonName" />
-
-                <!-- <EditText
-                    android:id="@+id/lastname"
-                    android:layout_width="475px"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_margin="15px"
-                    android:textSize="16sp"
-                    android:padding="10px"
-                    android:ems="10"
-                    android:background="@drawable/editbox"
-                    android:inputType="textPersonName" /> -->
 
             </LinearLayout>
 
@@ -282,14 +263,14 @@
                 android:layout_marginLeft="15px"
                 android:text="Contact Details"
                 android:textColor="#FF03A9F4"
-                android:textSize="20sp" />
+                android:textSize="14sp" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="3px"
-                android:layout_marginLeft="15px"
-                android:layout_marginRight="15px"
-                android:background="#FF03A9F4" />
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="3px"-->
+<!--                android:layout_marginLeft="15px"-->
+<!--                android:layout_marginRight="15px"-->
+<!--                android:background="#FF03A9F4" />-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -330,10 +311,10 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="15px"
                     android:layout_weight="1.75"
-                    android:background="@drawable/editbox"
+                    android:backgroundTint="#03A9F4"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:padding="10px"
+                    android:paddingBottom="20px"
                     android:textSize="16sp" />
 
                 <EditText
@@ -342,11 +323,11 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="15px"
                     android:layout_weight="1"
-                    android:background="@drawable/editbox"
+                    android:backgroundTint="#03A9F4"
                     android:ems="10"
                     android:inputType="numberDecimal"
                     android:maxLength="10"
-                    android:padding="10px"
+                    android:paddingBottom="20px"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -370,14 +351,14 @@
                 android:layout_marginLeft="15px"
                 android:text="Address Details"
                 android:textColor="#FF03A9F4"
-                android:textSize="20sp" />
+                android:textSize="14sp" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="3px"
-                android:layout_marginLeft="15px"
-                android:layout_marginRight="15px"
-                android:background="#FF03A9F4" />
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="3px"-->
+<!--                android:layout_marginLeft="15px"-->
+<!--                android:layout_marginRight="15px"-->
+<!--                android:background="#FF03A9F4" />-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -428,10 +409,10 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="15px"
                     android:layout_weight="8.5"
-                    android:background="@drawable/editbox"
+                    android:backgroundTint="#03A9F4"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:padding="10px"
+                    android:paddingBottom="20px"
                     android:textSize="16sp" />
 
                 <EditText
@@ -440,10 +421,10 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="15px"
                     android:layout_weight="1"
-                    android:background="@drawable/editbox"
+                    android:backgroundTint="#03A9F4"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:padding="10px"
+                    android:paddingBottom="20px"
                     android:textSize="16sp" />
 
                 <EditText
@@ -452,10 +433,10 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="15px"
                     android:layout_weight="1"
-                    android:background="@drawable/editbox"
+                    android:backgroundTint="#03A9F4"
                     android:ems="10"
                     android:inputType="numberDecimal"
-                    android:padding="10px"
+                    android:paddingBottom="20px"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -482,10 +463,10 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="15px"
                     android:layout_weight="1"
-                    android:background="@drawable/editbox"
+                    android:backgroundTint="#03A9F4"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:padding="10px"
+                    android:paddingBottom="20px"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -512,10 +493,10 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="15px"
                     android:layout_weight="1"
-                    android:background="@drawable/editbox"
+                    android:backgroundTint="#03A9F4"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:padding="10px"
+                    android:paddingBottom="20px"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -559,10 +540,10 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="15px"
                     android:layout_weight="10.5"
-                    android:background="@drawable/editbox"
+                    android:backgroundTint="#03A9F4"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:padding="10px"
+                    android:paddingBottom="20px"
                     android:textSize="16sp" />
 
                 <EditText
@@ -571,11 +552,11 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="15px"
                     android:layout_weight="1"
-                    android:background="@drawable/editbox"
+                    android:backgroundTint="#03A9F4"
                     android:ems="10"
                     android:inputType="numberDecimal"
                     android:maxLength="6"
-                    android:padding="10px"
+                    android:paddingBottom="20px"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -621,9 +602,9 @@
                     android:layout_weight="1"
                     android:layout_margin="15px"
                     android:textSize="16sp"
-                    android:padding="10px"
+                    android:paddingBottom="20px"
                     android:ems="10"
-                    android:background="@drawable/editbox"
+                    android:backgroundTint="#03A9F4"
                     android:inputType="textPersonName" />
 
                 <EditText
@@ -633,9 +614,9 @@
                     android:layout_weight="1"
                     android:layout_margin="15px"
                     android:textSize="16sp"
-                    android:padding="10px"
+                    android:paddingBottom="20px"
                     android:ems="10"
-                    android:background="@drawable/editbox"
+                    android:backgroundTint="#03A9F4"
                     android:inputType="textPersonName" />
 
             </LinearLayout>
@@ -659,76 +640,14 @@
                 android:layout_marginLeft="15px"
                 android:text="Authentication Details"
                 android:textColor="#FF03A9F4"
-                android:textSize="20sp" />
+                android:textSize="14sp" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="3px"
-                android:layout_marginLeft="15px"
-                android:layout_marginRight="15px"
-                android:background="#FF03A9F4" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/Uid"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15px"
-                    android:layout_marginTop="15px"
-                    android:layout_weight="1.7"
-                    android:text="UID"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/Uidbrowse"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15px"
-                    android:layout_weight="1"
-                    android:text="Aadhar Card"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/uid"
-                    android:layout_width="475px"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="15px"
-                    android:layout_weight="1.7"
-                    android:background="@drawable/editbox"
-                    android:ems="10"
-                    android:inputType="numberDecimal"
-                    android:maxLength="12"
-                    android:padding="10px"
-                    android:textSize="16sp" />
-
-                <Button
-                    android:id="@+id/uid_file"
-                    android:layout_width="475px"
-                    android:layout_height="78px"
-                    android:layout_marginLeft="15px"
-                    android:layout_marginTop="10px"
-                    android:layout_marginRight="15px"
-                    android:layout_marginBottom="15px"
-                    android:layout_weight="1"
-                    android:background="@drawable/button"
-                    android:text="Browse"
-                    android:textAllCaps="false"
-                    android:textColor="#FFFFFF" />
-
-            </LinearLayout>
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="3px"-->
+<!--                android:layout_marginLeft="15px"-->
+<!--                android:layout_marginRight="15px"-->
+<!--                android:background="#FF03A9F4" />-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -739,12 +658,20 @@
                     android:id="@+id/Profile_Pic"
                     android:layout_width="400px"
                     android:layout_height="400px"
-                    android:layout_weight="15"
+                    android:layout_weight="1"
                     android:layout_margin="15px"
+                    android:padding="4px"
                     android:adjustViewBounds="true"
                     android:scaleType="fitXY"
                     android:src="@drawable/ic_launcher_background"
-                    android:background="@drawable/editbox" />
+                    android:backgroundTint="#03A9F4" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
 
                 <Button
                     android:id="@+id/profile_Pic"
@@ -754,7 +681,7 @@
                     android:layout_weight="1"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/button"
-                    android:text="Browse"
+                    android:text="Personal Pic"
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF" />
 
@@ -782,10 +709,10 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="15px"
                     android:layout_weight="1"
-                    android:background="@drawable/editbox"
+                    android:backgroundTint="#03A9F4"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:padding="10px"
+                    android:paddingBottom="20px"
                     android:textSize="16sp" />
 
             </LinearLayout>

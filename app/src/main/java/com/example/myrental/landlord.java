@@ -12,26 +12,20 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 import java.util.HashMap;
 
-public class landlord extends AppCompatActivity {
+public class landlord extends AppCompatActivity
+{
     TextView DOB;
-    EditText Firstname, Middlename, Lastname, Occupation, Email, Phone, Buildingname, Flatno, Floorno, Road, Location, City, Pincode, District, State, UID;
+    EditText Firstname, Middlename, Lastname, Occupation, Email, Phone, Buildingname, Flatno, Floorno, Road, Location, City, Pincode, District, State;
     Button button;
     Spinner Gender;
 
-    DatabaseReference reference;
+    SessionManager sessionManager;
     HashMap<String, Object> edit = new HashMap<>();
     HashMap<String,Object> hashMap = new HashMap<>();
     DatePickerDialog datePickerDialog;
@@ -59,36 +53,86 @@ public class landlord extends AppCompatActivity {
         Pincode = findViewById(R.id.pincode);
         District = findViewById(R.id.district);
         State = findViewById(R.id.state);
-        UID = findViewById(R.id.uid);
-
         button = findViewById(R.id.submit);
 
-        if (getIntent().hasExtra("id"))
+        sessionManager = new SessionManager(getApplicationContext());
+
+        if (getIntent().hasExtra("edit") && getIntent().hasExtra("hashMap"))
         {
-            reference = FirebaseDatabase.getInstance().getReference().child("AddResidenceOwner");
+            edit = (HashMap<String, Object>) getIntent().getSerializableExtra("edit");
+            add(edit);
 
-            reference.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    reference.removeEventListener(this);
+//            reference = FirebaseDatabase.getInstance().getReference().child("RegistrationDatabase");
+//
+//            reference.addListenerForSingleValueEvent(new ValueEventListener() {
+//                @Override
+//                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                    reference.removeEventListener(this);
+//
+//                    for (DataSnapshot ds : dataSnapshot.getChildren())
+//                    {
+//                        edit = (HashMap<String, Object>) ds.getValue();
+//
+//                        if (edit.get("UID").equals(getIntent().getStringExtra("uid")))
+//                        {
+//                            edit.put("Key", ds.getKey());
+//                            add(edit);
+//                            break;
+//                        }
+//                    }
+//                }
+//
+//                @Override
+//                public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                }
+//            });
+            hashMap = (HashMap<String, Object>) getIntent().getSerializableExtra("hashMap");
 
-                    for (DataSnapshot ds : dataSnapshot.getChildren())
-                    {
-                        edit = (HashMap<String, Object>) ds.getValue();
-
-                        if (edit.get("Id").equals(getIntent().getStringExtra("id")))
-                        {
-                            add(edit, ds.getKey());
-                            break;
-                        }
-                    }
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                }
-            });
+//            reference = FirebaseDatabase.getInstance().getReference().child("AddResidenceOwner");
+//
+//            reference.addListenerForSingleValueEvent(new ValueEventListener() {
+//                @Override
+//                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                    reference.removeEventListener(this);
+//
+//                    for (DataSnapshot ds : dataSnapshot.getChildren())
+//                    {
+//                        hashMap = (HashMap<String, Object>) ds.getValue();
+//
+//                        if (hashMap.get("Id").equals(getIntent().getStringExtra("id")))
+//                        {
+//                            break;
+//                        }
+//                    }
+//                }
+//
+//                @Override
+//                public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                }
+//            });
+        }
+        else
+        {
+            Firstname.setText(sessionManager.getFirstname());
+            Middlename.setText(sessionManager.getMiddlename());
+            Lastname.setText(sessionManager.getLastname());
+            DOB.setText(sessionManager.getDOB());
+            ArrayAdapter<String> gender = new ArrayAdapter<String>(landlord.this, android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.gender));
+            Gender.setSelection(gender.getPosition(""+edit.get(sessionManager.getGender())));
+            Occupation.setText(sessionManager.getOccupation());
+            Email.setText(sessionManager.getEmail());
+            Phone.setText(""+sessionManager.getPhone());
+            Buildingname.setText(sessionManager.getBuildingname());
+            Flatno.setText(sessionManager.getFlatno());
+            Floorno.setText(""+sessionManager.getFloorno());
+            Road.setText(sessionManager.getRoad());
+            Location.setText(sessionManager.getLocation());
+            City.setText(sessionManager.getCity());
+            Pincode.setText(""+sessionManager.getPincode());
+            District.setText(""+sessionManager.getDistrict());
+            State.setText(sessionManager.getState());
         }
 
         DOB.setOnClickListener(new View.OnClickListener() {
@@ -136,11 +180,10 @@ public class landlord extends AppCompatActivity {
                 final String pincode = Pincode.getText().toString();
                 final String district = District.getText().toString();
                 final String state = State.getText().toString();
-                final String uid = UID.getText().toString();
 
                 if (firstname.isEmpty() || middlename.isEmpty() || lastname.isEmpty() || dob.isEmpty() || gender.isEmpty() || occupation.isEmpty() || email.isEmpty()
                         || phone.isEmpty() || buildingname.isEmpty() || flatno.isEmpty() || floorno.isEmpty() || road.isEmpty()
-                        || location.isEmpty() || city.isEmpty() || pincode.isEmpty() || district.isEmpty() || state.isEmpty() || uid.isEmpty())
+                        || location.isEmpty() || city.isEmpty() || pincode.isEmpty() || district.isEmpty() || state.isEmpty())
                 {
                     AlertDialog.Builder builder = new AlertDialog.Builder(landlord.this);
                     builder.setMessage("No Field Should Be Empty");
@@ -160,27 +203,27 @@ public class landlord extends AppCompatActivity {
                     builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            hashMap.put("Firstname",firstname);
-                            hashMap.put("Middlename",middlename);
-                            hashMap.put("Lastname",lastname);
-                            hashMap.put("DOB",dob);
-                            hashMap.put("Age",21);
-                            hashMap.put("Occupation",occupation);
-                            hashMap.put("Email",email);
-                            hashMap.put("Phone",Long.parseLong(phone));
-                            hashMap.put("Landlord_Buildingname",buildingname);
-                            hashMap.put("Landlord_Flatno",flatno);
-                            hashMap.put("Landlord_Floorno",Integer.parseInt(floorno));
-                            hashMap.put("Landlord_Road",road);
-                            hashMap.put("Landlord_Location",location);
-                            hashMap.put("Landlord_City",city);
-                            hashMap.put("Landlord_Pincode",Integer.parseInt(pincode));
-                            hashMap.put("Landlord_District",district);
-                            hashMap.put("Landlord_State",state);
-                            hashMap.put("Uid",Long.parseLong(uid));
+                            edit.put("Firstname",firstname);
+                            edit.put("Middlename",middlename);
+                            edit.put("Lastname",lastname);
+                            edit.put("DOB",dob);
+                            edit.put("Gender", gender);
+                            edit.put("Occupation",occupation);
+                            edit.put("Email",email);
+                            edit.put("Phone",Long.parseLong(phone));
+                            edit.put("Buildingname",buildingname);
+                            edit.put("Flatno",flatno);
+                            edit.put("Floorno",Integer.parseInt(floorno));
+                            edit.put("Road",road);
+                            edit.put("Location",location);
+                            edit.put("City",city);
+                            edit.put("Pincode",Integer.parseInt(pincode));
+                            edit.put("District",district);
+                            edit.put("State",state);
 
                             Intent intent = new Intent(landlord.this, com.example.myrental.PropertyDetails.class);
                             intent.putExtra("list", hashMap);
+                            intent.putExtra("edit", edit);
                             startActivity(intent);
                         }
                     });
@@ -195,9 +238,8 @@ public class landlord extends AppCompatActivity {
         });
     }
 
-    private void add(HashMap<String, Object> edit, String key) {
-        hashMap = edit;
-        hashMap.put("Key",key);
+    private void add(HashMap<String, Object> edit)
+    {
         Firstname.setText(""+edit.get("Firstname"));
         Middlename.setText(""+edit.get("Middlename"));
         Lastname.setText(""+edit.get("Lastname"));
@@ -216,6 +258,5 @@ public class landlord extends AppCompatActivity {
         Pincode.setText(""+edit.get("Pincode"));
         District.setText(""+edit.get("District"));
         State.setText(""+edit.get("State"));
-        UID.setText(""+edit.get("Uid"));
     }
 }

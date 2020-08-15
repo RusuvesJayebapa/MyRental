@@ -19,9 +19,23 @@
     </string-array>
 
     <string-array name="time_period">
-        <item>per day</item>
-        <item>per month</item>
-        <item>per year</item>
+        <item>/ day</item>
+        <item>/ month</item>
+        <item>/ year</item>
+    </string-array>
+
+    <string-array name="duration_time_period">
+        <item>day</item>
+        <item>month</item>
+        <item>year</item>
+    </string-array>
+
+    <string-array name="vehicle_time_period">
+        <item>/ km</item>
+        <item>/ hour</item>
+        <item>/ day</item>
+        <item>/ month</item>
+        <item>/ year</item>
     </string-array>
 
     <string-array name="gender">
@@ -42,6 +56,24 @@
     <string-array name="mop">
         <item>Cash</item>
         <item>Online</item>
+    </string-array>
+
+    <string-array name="vehicle_class">
+        <item>Bike</item>
+        <item>Bus</item>
+        <item>Compact Car</item>
+        <item>Economy Car</item>
+        <item>Luxury Vehicle</item>
+        <item>Mini Bus</item>
+        <item>Off-road Vehicle</item>
+        <item>Sedan</item>
+        <item>Sports Car</item>
+        <item>Van</item>
+    </string-array>
+
+    <string-array name="fuel">
+        <item>Petrol</item>
+        <item>Diesel</item>
     </string-array>
 
 </resources>

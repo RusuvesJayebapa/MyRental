@@ -1,8 +1,5 @@
 package com.example.myrental;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -20,10 +17,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.HashMap;
-import java.util.Random;
-import java.util.Set;
 
 public class PropertyDetails extends AppCompatActivity implements View.OnClickListener {
 
@@ -32,16 +29,24 @@ public class PropertyDetails extends AppCompatActivity implements View.OnClickLi
     EditText appliance, Property_typeno, Area, Surveyno, Buildingname, Flatno, Floorno, Road, Location, City, Pincode, State, Bed, Tv, Ac, Gyeser;
     Spinner Category, Property_type, Survey_Plot, Usage;
     ImageView add;
-    Button button;
+    Button button, previous;
     int count = 0, id = 0;
+    HashMap<String,Object> hashMap = new HashMap<>();
     HashMap<String,Integer> hashMap_appliances = new HashMap<>();
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(PropertyDetails.this, com.example.myrental.landlord.class);
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_property_details);
 
-        final HashMap<String,Object> hashMap = (HashMap<String, Object>) getIntent().getSerializableExtra("list");
+        final HashMap<String,Object> user = (HashMap<String, Object>) getIntent().getSerializableExtra("edit");
+        hashMap = (HashMap<String, Object>) getIntent().getSerializableExtra("list");
 
         linearLayout = findViewById(R.id.Applicance_Furniture);
         Category = findViewById(R.id.category);
@@ -85,7 +90,7 @@ public class PropertyDetails extends AppCompatActivity implements View.OnClickLi
         usage.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         Usage.setAdapter(usage);
 
-        if (hashMap.containsKey("Key"))
+        if (user.containsKey("Key"))
         {
             Category.setSelection(category.getPosition("" + hashMap.get("Category")));
             Property_type.setSelection(propertytype.getPosition("" + hashMap.get("Property_Type")));
@@ -103,72 +108,83 @@ public class PropertyDetails extends AppCompatActivity implements View.OnClickLi
             Pincode.setText("" + hashMap.get("Pincode"));
             State.setText("" + hashMap.get("State"));
 
-            HashMap<String, Integer> appliances_furniture = (HashMap<String, Integer>) hashMap.get("Appliances");
-            if (appliances_furniture.containsKey("Bed"))
-                Bed.setText(""+appliances_furniture.get("Bed"));
-            if (appliances_furniture.containsKey("TV"))
-                Tv.setText(""+appliances_furniture.get("TV"));
-            if (appliances_furniture.containsKey("AC"))
-                Ac.setText(""+appliances_furniture.get("AC"));
-            if (appliances_furniture.containsKey("Gyeser"))
-                Gyeser.setText(""+appliances_furniture.get("Gyeser"));
-
-
-            for (int i = 0; i < appliances_furniture.size(); i++)
+            if (hashMap.containsKey("Appliances"))
             {
-            count++;
-            id++;
-            LinearLayout ll = new LinearLayout(PropertyDetails.this);
-            ll.setOrientation(LinearLayout.VERTICAL);
-
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(222, LinearLayout.LayoutParams.WRAP_CONTENT);
-            params.weight = 1;
-            params.setMargins(15, 15, 15, 0);
-
-            TextView textView = new TextView(PropertyDetails.this);
-            textView.setId(count);
-            textView.setText(""+appliances_furniture.keySet().toArray()[i]);
-            textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
-            textView.setTextColor(Color.BLACK);
-            textView.setBackgroundResource(R.drawable.textbox);
-            textView.setLayoutParams(params);
-
-            LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(222, LinearLayout.LayoutParams.WRAP_CONTENT);
-            param.weight = 1;
-            param.setMargins(15, 15, 15, 15);
-
-            EditText editText = new EditText(PropertyDetails.this);
-            editText.setId(count+100);
-            editText.setPadding(10, 10, 10, 10);
-            editText.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
-            editText.setFilters(new InputFilter[] {new InputFilter.LengthFilter(2)});
-            editText.setText(""+appliances_furniture.values().toArray()[i]);
-            editText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
-            editText.setTextColor(Color.BLACK);
-            editText.setBackgroundResource(R.drawable.editbox);
-            editText.setLayoutParams(param);
+                HashMap<String, Integer> appliances_furniture = (HashMap<String, Integer>) hashMap.get("Appliances");
+                if (appliances_furniture.containsKey("Bed"))
+                    Bed.setText(""+appliances_furniture.get("Bed"));
+                if (appliances_furniture.containsKey("TV"))
+                    Tv.setText(""+appliances_furniture.get("TV"));
+                if (appliances_furniture.containsKey("AC"))
+                    Ac.setText(""+appliances_furniture.get("AC"));
+                if (appliances_furniture.containsKey("Gyeser"))
+                    Gyeser.setText(""+appliances_furniture.get("Gyeser"));
 
 
-            if (id == 5)
-            {
-                linearLayout1 = new LinearLayout(PropertyDetails.this);
-                linearLayout1.setOrientation(LinearLayout.HORIZONTAL);
-                ll.addView(textView);
-                ll.addView(editText);
-                linearLayout1.addView(ll);
-                linearLayout.addView(linearLayout1);
-                id -= 4;
+                for (int i = 0; i < appliances_furniture.size(); i++)
+                {
+                    if (!appliances_furniture.keySet().toArray()[i].toString().equals("AC") && !appliances_furniture.keySet().toArray()[i].toString().equals("Bed") &&
+                        !appliances_furniture.keySet().toArray()[i].toString().equals("Gyeser") && !appliances_furniture.keySet().toArray()[i].toString().equals("TV"))
+                    {
+                        count++;
+                        id++;
+                        LinearLayout ll = new LinearLayout(PropertyDetails.this);
+                        ll.setOrientation(LinearLayout.VERTICAL);
+
+                        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(222, LinearLayout.LayoutParams.WRAP_CONTENT);
+                        params.weight = 1;
+                        params.setMargins(15, 15, 15, 0);
+
+                        TextView textView = new TextView(PropertyDetails.this);
+                        textView.setId(count);
+                        textView.setText("" + appliances_furniture.keySet().toArray()[i]);
+                        textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
+                        textView.setTextColor(Color.BLACK);
+                        textView.setBackgroundResource(R.drawable.textbox);
+                        textView.setLayoutParams(params);
+
+                        LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(222, LinearLayout.LayoutParams.WRAP_CONTENT);
+                        param.weight = 1;
+                        param.setMargins(15, 15, 15, 15);
+
+                        EditText editText = new EditText(PropertyDetails.this);
+                        editText.setId(count + 100);
+                        editText.setPadding(10, 10, 10, 10);
+                        editText.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+                        editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(2)});
+                        editText.setText("" + appliances_furniture.values().toArray()[i]);
+                        editText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
+                        editText.setTextColor(Color.BLACK);
+                        editText.setBackgroundResource(R.drawable.editbox);
+                        editText.setLayoutParams(param);
+
+
+                        if (id == 5) {
+                            linearLayout1 = new LinearLayout(PropertyDetails.this);
+                            linearLayout1.setOrientation(LinearLayout.HORIZONTAL);
+                            ll.addView(textView);
+                            ll.addView(editText);
+                            linearLayout1.addView(ll);
+                            linearLayout.addView(linearLayout1);
+                            id -= 4;
+                        } else {
+                            ll.addView(textView);
+                            ll.addView(editText);
+                            linearLayout1.addView(ll);
+                        }
+
+                        textView.setOnClickListener(PropertyDetails.this);
+                    }
+                }
             }
-            else
-            {
-                ll.addView(textView);
-                ll.addView(editText);
-                linearLayout1.addView(ll);
-            }
+        }
 
-            textView.setOnClickListener(PropertyDetails.this);
-        }
-        }
+        findViewById(R.id.previous).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PropertyDetails.super.onBackPressed();
+            }
+        });
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -182,7 +198,7 @@ public class PropertyDetails extends AppCompatActivity implements View.OnClickLi
                 builder.setNeutralButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        if (count < 10)
+                        if (count < 10 && !object.getText().equals("Bed") && !object.getText().toString().equals("TV") && !object.getText().equals("AC") && !object.getText().equals("Gyeser"))
                         {
                             count++;
                             id++;
@@ -327,6 +343,7 @@ public class PropertyDetails extends AppCompatActivity implements View.OnClickLi
 
                             Intent intent = new Intent(PropertyDetails.this, com.example.myrental.AgreementDetails.class);
                             intent.putExtra("list", hashMap);
+                            intent.putExtra("user", user);
                             startActivity(intent);
                         }
                     });

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000"
+    android:background="#fff"
     android:orientation="vertical"
     tools:context=".AgreementDetails">
 
@@ -13,28 +13,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20px"
-            android:layout_marginTop="20px"
-            android:layout_marginRight="20px"
-            android:layout_marginBottom="5px"
-            android:background="@drawable/linearlayoutbox"
-            android:orientation="vertical"
-            android:padding="15px">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Agreement Details"
-                android:textColor="#FF03A9F4"
-                android:textSize="20sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
+        <!--<LinearLayout
             android:id="@+id/line1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -81,16 +60,38 @@
                         android:textSize="16sp" />
 
                     <Spinner
-                        android:layout_width="490px"
+                        android:id="@+id/duration_time_period"
+                        android:layout_width="wrap_content"
                         android:layout_height="76px"
                         android:layout_weight="1"
                         android:layout_margin="15px"
                         android:background="@drawable/editbox"
-                        android:entries="@array/time_period" />
+                        android:entries="@array/duration_time_period" />
 
                 </LinearLayout>
 
             </LinearLayout>
+
+        </LinearLayout>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="20px"
+            android:layout_marginRight="20px"
+            android:layout_marginBottom="5px"
+            android:background="@drawable/linearlayoutbox"
+            android:orientation="vertical"
+            android:padding="15px">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Agreement Details"
+                android:textColor="#FF03A9F4"
+                android:textSize="20sp" />
 
         </LinearLayout>
 
@@ -160,15 +161,65 @@
 
             <Spinner
                 android:id="@+id/mode"
-                android:layout_width="520px"
+                android:layout_width="match_parent"
                 android:layout_height="76px"
                 android:layout_margin="15px"
                 android:layout_weight="1"
                 android:background="@drawable/editbox" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15px"
+                android:text="Rent"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15px"
+                    android:layout_marginBottom="15px"
+                    android:layout_marginLeft="15px"
+                    android:text="₹ : "
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/rent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15px"
+                    android:layout_marginRight="15px"
+                    android:layout_marginBottom="15px"
+                    android:layout_weight="5"
+                    android:background="@drawable/editbox"
+                    android:inputType="numberDecimal"
+                    android:padding="10px"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/time_period"
+                    android:layout_width="wrap_content"
+                    android:layout_height="76px"
+                    android:layout_weight="1"
+                    android:layout_margin="15px"
+                    android:background="@drawable/editbox"
+                    android:entries="@array/time_period" />
+
+            </LinearLayout>
+
+
         </LinearLayout>
 
         <LinearLayout
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20px"
